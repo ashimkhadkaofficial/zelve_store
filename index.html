@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171613" />
+  <title>ZELVE STORE — Fashion & Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">COMPLIMENTARY DELIVERY ON ORDERS OVER NPR 3,000</div>
+  <header class="site-header">
+    <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+    <a href="#" class="brand" data-view="shop">ZELVE<span>STORE</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#shop" data-category="All">New arrivals</a>
+      <a href="#shop" data-category="Clothing">Clothing</a>
+      <a href="#shop" data-category="Cosmetics">Beauty</a>
+      <a href="#shop" data-category="Accessories">Accessories</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchToggle" aria-label="Search">⌕</button>
+      <button class="icon-button" id="accountButton" aria-label="Customer account">♙</button>
+      <button class="icon-button cart-button" id="cartButton" aria-label="Shopping cart">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE NEW SEASON EDIT</p>
+        <h1>Everyday pieces.<br><em>Extraordinary</em> you.</h1>
+        <p class="hero-description">Considered fashion and beauty essentials, chosen to make every day feel a little more special.</p>
+        <a class="button button-dark" href="#shop" data-category="All">Discover the collection <span>↗</span></a>
+        <div class="hero-note"><span class="note-line"></span> STYLE THAT FEELS LIKE YOU</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85" alt="Fashion editorial featuring a woman shopping">
+        <div class="image-tag"><span>CURATED FOR YOU</span><strong>New season, new mood.</strong></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>✳</span><p><strong>Curated quality</strong><small>Pieces worth keeping</small></p></div>
+      <div><span>◇</span><p><strong>Easy ordering</strong><small>A smoother shopping day</small></p></div>
+      <div><span>♡</span><p><strong>Made for you</strong><small>Fashion meets self-care</small></p></div>
+      <div><span>↗</span><p><strong>Delivery across Nepal</strong><small>From our store to you</small></p></div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR NEXT FAVOURITES</p><h2>Shop the edit</h2></div>
+        <p>Style, self-care, and little things that make a difference.</p>
+      </div>
+      <div class="toolbar">
+        <div class="category-tabs" id="categoryTabs">
+          <button class="active" data-filter="All">All pieces</button>
+          <button data-filter="Clothing">Clothing</button>
+          <button data-filter="Cosmetics">Beauty</button>
+          <button data-filter="Accessories">Accessories</button>
+        </div>
+        <div class="toolbar-right">
+          <input id="searchInput" class="search-input hidden" type="search" placeholder="Search products..." aria-label="Search products">
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Sort: Featured</option>
+            <option value="low">Price: Low to high</option>
+            <option value="high">Price: High to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section class="editorial">
+      <div class="editorial-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85" alt="Minimal fashion editorial"></div>
+      <div class="editorial-copy"><p class="eyebrow">LESS, BUT BETTER</p><h2>Find your kind<br>of <em>beautiful.</em></h2><p>From everyday outfits to your feel-good beauty ritual, discover pieces that fit your life and your style.</p><button class="button button-light" data-category="Cosmetics">Explore beauty <span>↗</span></button></div>
+    </section>
+
+    <section class="newsletter">
+      <p class="eyebrow">A LITTLE NOTE FROM ZELVE</p><h2>Good things look good on you.</h2>
+      <p>Get new arrivals, styling notes, and special offers in your inbox.</p>
+      <form id="newsletterForm"><input type="email" placeholder="Your email address" required><button class="button button-dark" type="submit">Sign me up ↗</button></form>
+      <small id="newsletterMessage"></small>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a href="#" class="brand footer-brand">ZELVE<span>STORE</span></a><p>Fashion, beauty, and everyday confidence.</p></div>
+    <div><strong>Explore</strong><a href="#shop" data-category="Clothing">Clothing</a><a href="#shop" data-category="Cosmetics">Beauty</a><a href="#shop" data-category="Accessories">Accessories</a></div>
+    <div><strong>Help</strong><a href="#" id="footerAccount">My account</a><a href="#" id="footerOrders">My orders</a><a href="mailto:hello@zelvestore.com">Contact us</a></div>
+    <div><strong>Follow along</strong><p>Find your everyday favourite.</p><span class="socials">Instagram&nbsp; · &nbsp;TikTok</span></div>
+    <div class="footer-bottom">© <span id="year"></span> ZELVE STORE. All rights reserved. <button id="adminLink">Store admin ↗</button></div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag">
+    <div class="drawer-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="close-button" data-close>×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">NPR 0</strong></div><small>Delivery charges are confirmed at checkout.</small><button id="checkoutButton" class="button button-dark full-width">Continue to checkout ↗</button></div>
+  </aside>
+
+  <section class="modal" id="accountModal" aria-modal="true" role="dialog">
+    <button class="close-button modal-close" data-close>×</button>
+    <p class="eyebrow">WELCOME TO ZELVE</p><h2>Your account</h2><p class="muted">Enter your details to continue with this demo store.</p>
+    <form id="accountForm" class="stack-form"><label>Your name<input id="customerName" required placeholder="Full name"></label><label>Email address<input id="customerEmail" type="email" required placeholder="you@example.com"></label><label>Phone number<input id="customerPhone" required placeholder="98XXXXXXXX"></label><button class="button button-dark full-width">Continue ↗</button></form>
+    <div id="customerArea"></div>
+  </section>
+
+  <section class="modal checkout-modal" id="checkoutModal" aria-modal="true" role="dialog">
+    <button class="close-button modal-close" data-close>×</button><p class="eyebrow">ALMOST YOURS</p><h2>Checkout</h2>
+    <form id="checkoutForm" class="stack-form">
+      <label>Full name<input id="checkoutName" required></label>
+      <label>Email address<input id="checkoutEmail" type="email" required></label>
+      <label>Phone number<input id="checkoutPhone" required placeholder="98XXXXXXXX"></label>
+      <label>Delivery address<textarea id="checkoutAddress" rows="3" required placeholder="Street, area, city"></textarea></label>
+      <label>Payment method<select id="paymentMethod"><option>Cash on Delivery</option><option>Bank transfer (confirm manually)</option></select></label>
+      <div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">NPR 0</strong></div>
+      <button class="button button-dark full-width">Place demo order ↗</button>
+    </form>
+    <p class="tiny-note">Demo only: no payment is processed and no real order is sent to a store.</p>
+  </section>
+
+  <section class="modal admin-modal" id="adminModal" aria-modal="true" role="dialog">
+    <button class="close-button modal-close" data-close>×</button>
+    <div id="adminLoginView">
+      <p class="eyebrow">ZELVE STORE MANAGEMENT</p><h2>Admin access</h2><p class="muted">Demo credentials: <b>admin</b> / <b>zelve123</b></p>
+      <form id="adminLoginForm" class="stack-form"><label>Username<input id="adminUsername" required autocomplete="username" placeholder="admin"></label><label>Password<input id="adminPassword" type="password" required autocomplete="current-password" placeholder="Password"></label><button class="button button-dark full-width">Sign in to dashboard ↗</button></form>
+      <p class="tiny-note">This demo login is not secure enough for a public website.</p>
+    </div>
+    <div id="adminDashboardView" class="hidden">
+      <div class="admin-top"><div><p class="eyebrow">STORE CONTROL</p><h2>Admin dashboard</h2></div><button class="button button-outline" id="adminLogout">Log out</button></div>
+      <div class="admin-stats" id="adminStats"></div>
+      <div class="admin-tabs"><button class="active" data-admin-tab="products">Products</button><button data-admin-tab="orders">Orders</button><button data-admin-tab="customers">Customers</button></div>
+      <div id="adminPanelContent"></div>
+    </div>
+  </section>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
